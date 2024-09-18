@@ -1,17 +1,25 @@
 import { registerApplication, start } from "single-spa";
 
 registerApplication({
-  name: "@single-spa/welcome",
-  app: () =>
-    System.import(
-      "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js"
-    ),
+  name: "@vue-mf/navbar",
+  app: () => System.import("@vue-mf/navbar"),
+  activeWhen: ["/"]
+});
+registerApplication({
+  name: "@vue-mf/page-home",
+  app: () => System.import("@vue-mf/page-home"),
   activeWhen: ["/"],
 });
 
 registerApplication({
-  name: "@vue-mf/navbar",
-  app: () => System.import("@vue-mf/navbar"),
+  name: "@vue-mf/page-1",
+  app: () => System.import("@vue-mf/page-1"),
+  activeWhen: ["/link-1"],
+});
+
+registerApplication({
+  name: "@vue-mf/footer",
+  app: () => System.import("@vue-mf/footer"),
   activeWhen: ["/"]
 });
 
