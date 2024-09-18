@@ -17,12 +17,6 @@ registerApplication({
   activeWhen: ["/link-1"],
 });
 
-registerApplication({
-  name: "@vue-mf/footer",
-  app: () => System.import("@vue-mf/footer"),
-  activeWhen: ["/"]
-});
-
 start({
   urlRerouteOnly: true,
 });
